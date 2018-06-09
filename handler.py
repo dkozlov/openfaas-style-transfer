@@ -82,9 +82,9 @@ with tf.Graph().as_default():
 
     # get the style image
     np_style_image = load_image_into_numpy_array(Image.open(style_image_filename))
-    print('Starting transferring the style of [%s]' % style_label)
 
     def run_inference_for_single_image(np_content_image):
+        print('Starting transferring the style of [%s]' % style_label)
         nn = 0.0
         total_time = 0.0
 
@@ -113,4 +113,5 @@ def handle(req):
         pil_image = run_inference_for_single_image(image_np)
     except Exception as e:
         print("Error: ", e)
+        return "Error: " + str(e)
     return serve_pil_image(pil_image)
