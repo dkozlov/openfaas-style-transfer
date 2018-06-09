@@ -60,7 +60,7 @@ with tf.Graph().as_default():
     stylized_image = style_model.transfer_styles(
         content_image,
         style_image,
-        inter_weight=0.5)
+        inter_weight=float(os.environ['INTER_WEIGHT']))
     stylized_image = tf.squeeze(stylized_image, axis=0)
 
     # gather the test image filenames and style image filenames

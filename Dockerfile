@@ -17,6 +17,7 @@ COPY AvatarNet_config.yml .
 COPY handler.py .
 COPY run_server.py .
 
+ENV INTER_WEIGHT=0.5
 ENV STYLE_PATH="styles/gold.jpg"
 ENV write_debug="true"
 ENV fprocess="python3 run_server.py"
