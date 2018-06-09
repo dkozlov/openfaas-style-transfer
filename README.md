@@ -4,7 +4,7 @@
 
 # Check result
 ```
-sudo docker run -it --net="host" dfkozlov/openfaas-style-transfer
+sudo docker run -it --net="host"  -e STYLE_PATH='styles/candy.jpg' dfkozlov/openfaas-style-transfer
 curl --request POST --url http://localhost:5000 --data-binary @"image.jpg" --output style_transfer_result.jpg
 ```
 
